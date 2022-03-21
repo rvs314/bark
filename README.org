@@ -1,0 +1,3 @@
+* Bark - A RNRS Testing System
+
+Bark is an incredibly small, simple testing framework for R6RS and R7RS scheme. It is a single file (=bark.scm=), and creates a library in your scheme version of choice.
