@@ -1,5 +1,5 @@
 (import (scheme base)
-        (bark main))
+        (bark base))
 
 (define (factorial k)
   (let lp [[k k]
