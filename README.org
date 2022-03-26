@@ -6,7 +6,7 @@ Bark is an incredibly small, simple testing framework for R7RS scheme. It is a s
 ** Assertions: =is= and =isnt=
 
 Bark has two forms for checking runtime assertions, =is= and =isnt=:
-- The form =(is F1 F2 ...)= checks that the forms =F1=, =F2=, ... all evaluate to non-=#f= values
+- The form =(is F1 F2 ...)= checks that the forms =F1=, =F2=, ... all evaluate to values which aren't =#f=
 - The form =(isnt F1 F2 ...)= checks that the forms =F1=, =F2=, ... all evaluate to =#f=
 
 ** Errors: =fail-test=
