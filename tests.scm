@@ -1,7 +1,7 @@
 (define-library (bark tests)
   (export *all-tests* fail-test
           is isnt
-          test run-tests)
+          test run-tests!)
 
   (import (scheme base))
 
@@ -32,6 +32,8 @@
 
     (define-syntax is
       (syntax-rules ()
+        [(_ x y zs ...)
+         (begin (is x) (is y) (is zs) ...)]
         [(_ (predicate args ...))
          (let* ([rgs (list args ...)]
                 [res (apply predicate rgs)])
@@ -47,6 +49,8 @@
 
     (define-syntax isnt
       (syntax-rules ()
+        [(_ x y zs ...)
+         (begin (isnt x) (isnt y) (isnt zs) ...)]
         [(_ (predicate args ...))
          (let* ([rgs (list args ...)]
                 [res (apply predicate rgs)])
@@ -66,9 +70,8 @@
          (begin (define (name)
                   (parameterize ([*test-stack* (cons 'name (*test-stack*))]
                                  [*all-tests* '()])
-                    body body* ...
-                    (run-tests)))
+                    body body* ...))
                 (*all-tests* (cons name (*all-tests*))))]))
 
-    (define (run-tests)
-      (for-each (lambda (k) (k)) (*all-tests*)))))
+    (define (run-tests!)
+      (for-each (lambda (k) (k)) (reverse (*all-tests*))))))
