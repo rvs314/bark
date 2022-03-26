@@ -1,6 +1,6 @@
 * Bark - A R7RS Testing System
 
-Bark is an incredibly small, simple testing framework for R7RS scheme. It is a single file (=main.scm=), and creates a library which exposes basic test creation and management facilities. 
+Bark is an incredibly small, simple testing framework for R7RS scheme. It is a single file (=base.scm=), and creates a library which exposes basic test creation and management facilities. 
 
 * Contents
 ** Assertions: =is= and =isnt=

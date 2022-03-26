@@ -1,4 +1,4 @@
-(define-library (bark main)
+(define-library (bark base)
   (export *all-tests* fail-test
           is isnt
           test run-tests!)
